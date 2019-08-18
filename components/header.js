@@ -12,9 +12,11 @@ const NonLoginTemplate = (props) => {
 const LoginTemplate = (props) => {
   return (
     <div>
-      <span>{props.userName}</span>
+      <div>
+        <span>{props.userName}</span>
+        <input type="button" value="Log out" onClick={props.logoutEvent}/>
+      </div>
       <span>{props.lastUpdated}</span>
-      <input type="button" value="Log out" onClick={props.logoutEvent}/>
     </div>
   )
 }

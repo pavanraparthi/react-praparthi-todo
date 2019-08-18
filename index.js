@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Header from './components/header';
+import Todos from './components/todos';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       isLoggedIn:false,
-      todos: [],
+      todos: [{
+        name:"React",
+        desc:"Learn React Framework",
+        priority:"High"
+      },
+      {
+        name:"Angular",
+        desc:"Learn Angular Framework",
+        priority:"High"
+      }],
       userName:"",
       lastUpdated:new Date().toDateString()
     };
@@ -40,6 +50,8 @@ class App extends Component {
         logoutEvent={this.doLogout}
         loginEvent={this.doLogin}
         signUpEvent={this.doSignUp}></Header>
+        {this.state.isLoggedIn ? 
+        <Todos todos={this.state.todos}></Todos> : ''}
       </div>
     );
   }
