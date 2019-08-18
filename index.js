@@ -7,6 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isLoggedIn:false,
       todos: [],
       userName:"",
       lastUpdated:new Date().toDateString()
@@ -14,11 +15,16 @@ class App extends Component {
   }
 
   doLogout = () => {
-    console.log("do Logout");
+    this.setState({
+      isLoggedIn:false
+    })
   }
 
   doLogin = () => {
-    console.log("do Login");
+    this.setState({
+      isLoggedIn:true,
+      userName:"pavan"
+    })
   }
 
   doSignUp = () => {

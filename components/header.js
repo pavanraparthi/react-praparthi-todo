@@ -20,15 +20,13 @@ const LoginTemplate = (props) => {
 }
 
 class Header extends Component {
-  constructor (){
-    
-  }
+  
   render() {
     return (
       <div>
         <h1>Welcome to Todo App</h1>
-        { props.isLoggedIn ? <LoginTemplate userName={props.userName}
-        lastUpdated={props.lastUpdated} logoutEvent={props.logoutEvent}/> : <NonLoginTemplate loginEvent={props.loginEvent} signUpEvent={props.signUpEvent}/>}
+        { this.props.isLoggedIn ? <LoginTemplate userName={this.props.userName}
+        lastUpdated={this.props.lastUpdated} logoutEvent={this.props.logoutEvent}/> : <NonLoginTemplate loginEvent={this.props.loginEvent} signUpEvent={this.props.signUpEvent}/>}
       </div>
     )
   }
